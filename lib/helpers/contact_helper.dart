@@ -73,7 +73,15 @@ class ContactHelper {
         whereArgs: [contact.id]);
   }
 
-
+  Future<List> getAllContacts() async{
+    Database dbContact = await db;
+    List listMap = await dbContact.rawQuery("SELECT * FROM $contactTable");
+    List<Contact> listContact = List();
+    for(Map map in listMap){
+      listContact.add(Contact.fromMap(map));
+    }
+    return listContact;
+  }
 
 }
 
