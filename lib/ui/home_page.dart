@@ -58,11 +58,13 @@ class _HomePageState extends State<HomePage> {
                 width: 80.0,
                 height: 80.0,
                 decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    image: DecorationImage(
-                        image: contacts[index].img != null
-                            ? FileImage(File(contacts[index].img))
-                            : AssetImage("images/person.png"))),
+                  shape: BoxShape.circle,
+                  image: DecorationImage(
+                    image: contacts[index].img != null
+                        ? FileImage(File(contacts[index].img))
+                        : AssetImage("images/person.png"),
+                  ),
+                ),
               ),
               Padding(
                 padding: EdgeInsets.only(left: 10.0),
